@@ -538,7 +538,7 @@ public struct AlertToastModifier: ViewModifier{
                     .overlay(ZStack{
                         main()
                     }
-                    .frame(maxWidth: .infinity, maxHeight: alert().displayMode == .alert ? .infinity : -hostRect.midY / 2, alignment: .center)
+                    .frame(maxWidth: .infinity, maxHeight: abs(alert().displayMode == .alert ? .infinity : -hostRect.midY / 2), alignment: .center)
                     .offset(x: 0, y: alert().displayMode == .alert ? 0 : offset)
                     .edgesIgnoringSafeArea(alert().displayMode == .alert ? .all : .bottom)
                     .animation(Animation.spring(), value: isPresenting))
